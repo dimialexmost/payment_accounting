@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Home</title>
 </head>
 <body>
-$END$
+<form action="login" method="POST">
+    <h2>Sign in form</h2>
+    <div>
+        <label>Username</label>
+        <input type="text" name="username">
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="password">
+    </div>
+
+    <p th:if="${param.error != null}" th:text="${param.error}" />
+
+    <p th:if="${param.status != null}" th:text="${param.status}" />
+
+    <p th:if="${session.loginAttempts != null}" th:text="${'Login attempts: '+ session.loginAttempts}" />
+
+    <button type="submit">Login</button>
+</form>
 </body>
 </html>
