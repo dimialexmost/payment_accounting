@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<form th:action="@{/home/logout}" th:method="POST">
+    <button type="submit">Logout/Home</button>
+</form>
+<form th:action="@{/invoice/new}" th:method="GET">
+    <button type="submit">Payment</button>
+</form>
+<form th:action="@{/invoice}" th:method="GET">
+    <button type="submit">Invoice</button>
+</form>
+<form  >
+    <button type="submit">Edit</button>
+</form>
+<form th:action="@{/home/verify}" th:method="POST" th:object="${user}">
+    <h2>Sign in form</h2>
+    <div>
+        <label for="username">Username</label>&ensp; &ensp;
+        <input type="text" th:field="*{username}" id="username">
+    </div>
+    <br>
+    <div>
+        <label for="password">Password</label>&ensp; &ensp;
+        <input type="password" th:field="*{password}" id="password">
+    </div>
+    <br>
+    <br>
+
+    <button type="submit">Login</button>
+    <br>
+    <br>
+<!--    <button type="submit">Logout</button>-->
+</form>
+</body>
+</html>

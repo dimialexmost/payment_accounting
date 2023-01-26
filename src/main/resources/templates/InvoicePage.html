@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+</head>
+<body>
+
+<form th:action="@{/home/logout}" th:method="POST">
+    <button type="submit">Logout/Home</button>
+</form>
+<form th:action="@{/invoice/new}" th:method="GET">
+    <button type="submit">Payment</button>
+</form>
+<form th:action="@{/invoice}" th:method="GET">
+    <button type="submit">Invoice</button>
+</form>
+    <form  >
+        <button type="submit">Edit</button>
+    </form>
+<p> ID | DATE &ensp; &ensp;|&ensp;&ensp;CATEGORY | TITLE   | DESCRIPTION | SUM</p>
+<div th:each="payment: ${payments}">
+
+
+    <p th:text="${payment.getId()} + ' ' + ${payment.getDate()} + ' ' + ${payment.getCategory()} + ' ' + ${payment.getTitle()} + ' ' + ${payment.getDescription()} + ' ' + ${payment.getSum()}" >text</p>
+</div>
+<form th:action="@{/invoice/new}" th:method="GET">
+    <button type="submit">Add new payment</button>
+</form>
+<br>
+
+</form>
+</body>
+</html>

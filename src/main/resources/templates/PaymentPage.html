@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+</head>
+<body>
+<form th:action="@{/invoice/new}" th:method="POST" th:object="${payment}">
+    <LABEL for="category">Category</LABEL>&ensp;&ensp;&ensp;
+    <input type="text" th:field="*{category}" id="category"/>
+    <br>
+    <br>
+    <LABEL for="title">Title</LABEL> &ensp; &ensp; &ensp;&ensp;&ensp;
+    <input type="text" th:field="*{title}" id="title"/>
+    <br>
+    <br>
+    <LABEL for="description">Description</LABEL>&ensp;
+    <input type="text" th:field="*{description}" id="description"/>
+    <br>
+    <br>
+    <LABEL for="sum">Sum</LABEL>&ensp; &ensp; &ensp;&ensp;&ensp;&ensp;
+    <input type="number" th:field="*{sum}" step = 0.01 id="sum"/>
+    <br>
+    <br>
+    <LABEL for="date">Date</LABEL>&ensp; &ensp; &ensp;&ensp;&ensp;&ensp;
+    <input type="date" th:field="*{date}" id="date"/>
+    <br>
+    <br>
+    <button type="submit">Add payment</button>
+</form>
+</body>
+</html>
