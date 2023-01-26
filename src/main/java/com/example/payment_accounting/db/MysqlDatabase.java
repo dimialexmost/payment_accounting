@@ -10,7 +10,7 @@ public class MysqlDatabase {
     private Connection connection;
 
     private MysqlDatabase() {
-        String url = "jdbc:mysql://localhost:3306/spring-session?createDatabaseIfNotExist=true";
+        String url = "jdbc:mysql://localhost:3306/payments?createDatabaseIfNotExist=true";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

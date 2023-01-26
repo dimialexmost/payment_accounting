@@ -12,4 +12,4 @@ CREATE TABLE users (
 INSERT INTO users (username, created_at, created_by, password) VALUES ("Niklas", now(), "CONSOLE", "column");
 INSERT INTO users (username, created_at, created_by, password) VALUES ("David", now(), "CONSOLE", "column2");
 INSERT INTO users (username, created_at, created_by, password) VALUES ("Fredrik", now(), "CONSOLE", "column3");
-INSERT INTO users (username, created_at, created_by, password) VALUES ("Agnetta", now(), "CONSOLE", "column3");
+INSERT INTO users (username, created_at, created_by, password) VALUES ("Agnetta", now(), "CONSOLE", "column4");

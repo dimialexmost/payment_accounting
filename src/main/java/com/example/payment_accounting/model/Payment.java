@@ -9,6 +9,15 @@ public class Payment {
     private String description;
     private String category;
     private double sum;
+    private int id;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public String getTitle() {
         return title;
