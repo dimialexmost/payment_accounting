@@ -33,20 +33,33 @@
 </table>
 <br>
 <br>
+<table>
 
-<p> ID &ensp; &ensp;<b>|</b>&ensp;&ensp;DATE &ensp; &ensp;<b>|</b>&ensp;&ensp;CATEGORY &ensp; &ensp;<b>|</b>&ensp;&ensp;TITLE
-    &ensp; &ensp;<b>|</b>&ensp;&ensp;DESCRIPTION &ensp; &ensp;<b>|</b>&ensp;&ensp;SUM</p>
-<div th:each="payment: ${payments}">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>DATE</th>
+        <th>CATEGORY</th>
+        <th>TITLE</th>
+        <th>DESCRIPTION</th>
+        <th>SUM</th>
+    </tr>
+    </thead>
 
-
-    <p th:text="${payment.getId()} + ' ' + ${payment.getDate()} + ' ' + ${payment.getCategory()} + ' ' + ${payment.getTitle()} + ' ' + ${payment.getDescription()} + ' ' + ${payment.getSum()}">
-        text</p>
-</div>
+    <tbody>
+    <tr th:each="payment: ${payments}">
+        <td th:text="${payment.Id}"/>
+        <td th:text="${payment.Date}"/>
+        <td th:text="${payment.Category}"/>
+        <td th:text="${payment.Title}"/>
+        <td th:text="${payment.Description}"/>
+        <td th:text="${payment.Sum}"/>
+    </tr>
+    </tbody>
+</table>
 <form th:action="@{/invoice/new}" th:method="GET">
     <button type="submit">Add new payment</button>
 </form>
 <br>
-
-</form>
 </body>
 </html>
