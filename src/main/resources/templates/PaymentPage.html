@@ -5,6 +5,29 @@
     <title>Payment</title>
 </head>
 <body>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <form th:action="@{/home/logout}" th:method="POST">
+                <button type="submit">Logout/Home</button>
+            </form>
+        </th>
+        <th>
+            <form th:action="@{/invoice}" th:method="GET">
+                <button type="submit">Invoice</button>
+            </form>
+        </th>
+        <th>
+            <form>
+                <button type="submit">Edit</button>
+            </form>
+        </th>
+    </tr>
+    </thead>
+</table>
+<br>
+<br>
 <form th:action="@{/invoice/new}" th:method="POST" th:object="${payment}">
     <LABEL for="category">Category</LABEL>&ensp;&ensp;&ensp;
     <input type="text" th:field="*{category}" id="category"/>
@@ -19,7 +42,7 @@
     <br>
     <br>
     <LABEL for="sum">Sum</LABEL>&ensp; &ensp; &ensp;&ensp;&ensp;&ensp;
-    <input type="number" th:field="*{sum}" step = 0.01 id="sum"/>
+    <input type="number" th:field="*{sum}" step=0.01 id="sum"/>
     <br>
     <br>
     <LABEL for="date">Date</LABEL>&ensp; &ensp; &ensp;&ensp;&ensp;&ensp;

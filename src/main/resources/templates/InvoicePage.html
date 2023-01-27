@@ -5,24 +5,42 @@
     <title>Invoice</title>
 </head>
 <body>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <form th:action="@{/home/logout}" th:method="POST">
+                <button type="submit">Logout/Home</button>
+            </form>
+        </th>
+        <th>
+            <form th:action="@{/invoice}" th:method="GET">
+                <button type="submit">Invoice</button>
+            </form>
+        </th>
+        <th>
+            <form th:action="@{/invoice/new}" th:method="GET">
+                <button type="submit">Payment</button>
+            </form>
+        </th>
+        <th>
+            <form>
+                <button type="submit">Edit</button>
+            </form>
+        </th>
+    </tr>
+    </thead>
+</table>
+<br>
+<br>
 
-<form th:action="@{/home/logout}" th:method="POST">
-    <button type="submit">Logout/Home</button>
-</form>
-<form th:action="@{/invoice/new}" th:method="GET">
-    <button type="submit">Payment</button>
-</form>
-<form th:action="@{/invoice}" th:method="GET">
-    <button type="submit">Invoice</button>
-</form>
-    <form  >
-        <button type="submit">Edit</button>
-    </form>
-<p> ID | DATE &ensp; &ensp;|&ensp;&ensp;CATEGORY | TITLE   | DESCRIPTION | SUM</p>
+<p> ID &ensp; &ensp;<b>|</b>&ensp;&ensp;DATE &ensp; &ensp;<b>|</b>&ensp;&ensp;CATEGORY &ensp; &ensp;<b>|</b>&ensp;&ensp;TITLE
+    &ensp; &ensp;<b>|</b>&ensp;&ensp;DESCRIPTION &ensp; &ensp;<b>|</b>&ensp;&ensp;SUM</p>
 <div th:each="payment: ${payments}">
 
 
-    <p th:text="${payment.getId()} + ' ' + ${payment.getDate()} + ' ' + ${payment.getCategory()} + ' ' + ${payment.getTitle()} + ' ' + ${payment.getDescription()} + ' ' + ${payment.getSum()}" >text</p>
+    <p th:text="${payment.getId()} + ' ' + ${payment.getDate()} + ' ' + ${payment.getCategory()} + ' ' + ${payment.getTitle()} + ' ' + ${payment.getDescription()} + ' ' + ${payment.getSum()}">
+        text</p>
 </div>
 <form th:action="@{/invoice/new}" th:method="GET">
     <button type="submit">Add new payment</button>
