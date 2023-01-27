@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/home")
@@ -41,7 +42,7 @@ public class AuthController {
     }
     @PostMapping("/logout")
     public String logout (HttpSession session) {
-        session.removeAttribute("username");
+        session.invalidate();
         return "redirect:/home";
     }
 }

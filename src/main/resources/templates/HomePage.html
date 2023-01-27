@@ -5,18 +5,35 @@
     <title>Home</title>
 </head>
 <body>
-<form th:action="@{/home/logout}" th:method="POST">
-    <button type="submit">Logout/Home</button>
-</form>
-<form th:action="@{/invoice/new}" th:method="GET">
-    <button type="submit">Payment</button>
-</form>
-<form th:action="@{/invoice}" th:method="GET">
-    <button type="submit">Invoice</button>
-</form>
-<form  >
-    <button type="submit">Edit</button>
-</form>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <form th:action="@{/home/logout}" th:method="POST">
+                <button type="submit">Logout/Home</button>
+            </form>
+        </th>
+        <th>
+            <form th:action="@{/invoice}" th:method="GET">
+                <button type="submit">Invoice</button>
+            </form>
+        </th>
+        <th>
+            <form th:action="@{/invoice/new}" th:method="GET">
+                <button type="submit">Payment</button>
+            </form>
+        </th>
+        <th>
+            <form>
+                <button type="submit">Edit</button>
+            </form>
+        </th>
+    </tr>
+    </thead>
+</table>
+<br>
+<br>
+
 <form th:action="@{/home/verify}" th:method="POST" th:object="${user}">
     <h2>Sign in form</h2>
     <div>

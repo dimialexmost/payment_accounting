@@ -5,30 +5,61 @@
     <title>Invoice</title>
 </head>
 <body>
+<table>
+    <thead>
+    <tr>
+        <th>
+            <form th:action="@{/home/logout}" th:method="POST">
+                <button type="submit">Logout/Home</button>
+            </form>
+        </th>
+        <th>
+            <form th:action="@{/invoice}" th:method="GET">
+                <button type="submit">Invoice</button>
+            </form>
+        </th>
+        <th>
+            <form th:action="@{/invoice/new}" th:method="GET">
+                <button type="submit">Payment</button>
+            </form>
+        </th>
+        <th>
+            <form>
+                <button type="submit">Edit</button>
+            </form>
+        </th>
+    </tr>
+    </thead>
+</table>
+<br>
+<br>
+<table>
 
-<form th:action="@{/home/logout}" th:method="POST">
-    <button type="submit">Logout/Home</button>
-</form>
-<form th:action="@{/invoice/new}" th:method="GET">
-    <button type="submit">Payment</button>
-</form>
-<form th:action="@{/invoice}" th:method="GET">
-    <button type="submit">Invoice</button>
-</form>
-    <form  >
-        <button type="submit">Edit</button>
-    </form>
-<p> ID | DATE &ensp; &ensp;|&ensp;&ensp;CATEGORY | TITLE   | DESCRIPTION | SUM</p>
-<div th:each="payment: ${payments}">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>DATE</th>
+        <th>CATEGORY</th>
+        <th>TITLE</th>
+        <th>DESCRIPTION</th>
+        <th>SUM</th>
+    </tr>
+    </thead>
 
-
-    <p th:text="${payment.getId()} + ' ' + ${payment.getDate()} + ' ' + ${payment.getCategory()} + ' ' + ${payment.getTitle()} + ' ' + ${payment.getDescription()} + ' ' + ${payment.getSum()}" >text</p>
-</div>
+    <tbody>
+    <tr th:each="payment: ${payments}">
+        <td th:text="${payment.Id}"/>
+        <td th:text="${payment.Date}"/>
+        <td th:text="${payment.Category}"/>
+        <td th:text="${payment.Title}"/>
+        <td th:text="${payment.Description}"/>
+        <td th:text="${payment.Sum}"/>
+    </tr>
+    </tbody>
+</table>
 <form th:action="@{/invoice/new}" th:method="GET">
     <button type="submit">Add new payment</button>
 </form>
 <br>
-
-</form>
 </body>
 </html>
